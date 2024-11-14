@@ -1,7 +1,9 @@
 venv/
 *.csv
-*.txt
 *.html
+
+*.txt
+!requirements.txt
 
 # Ignore Python cache
 __pycache__/
