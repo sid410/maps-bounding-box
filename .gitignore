@@ -1,0 +1,10 @@
+venv/
+*.csv
+*.txt
+*.html
+
+# Ignore Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
