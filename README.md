@@ -12,6 +12,8 @@ pip install -r requirements.txt
 
 ## Draw and visualize the bounds
 
+ready the csv file in the same folder (BP001_00100m.csv)
+
 ```bash
 python get_map_bounds.py
 ```
