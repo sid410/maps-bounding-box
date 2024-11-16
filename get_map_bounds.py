@@ -39,15 +39,58 @@ bounds = [
 folium.PolyLine(bounds, color="red", weight=2.5, opacity=0.8).add_to(m)
 
 # Draw each quad mesh
-for index, row in data.iterrows():
-    quad = [
-        [row["P1-Lat"], row["P1-Long"]],
-        [row["P2-Lat"], row["P2-Long"]],
-        [row["P3-Lat"], row["P3-Long"]],
-        [row["P4-Lat"], row["P4-Long"]],
-        [row["P1-Lat"], row["P1-Long"]],
-    ]
-    folium.PolyLine(quad, color="blue", weight=2.5, opacity=0.8).add_to(m)
+# for index, row in data.iterrows():
+#     quad = [
+#         [row["P1-Lat"], row["P1-Long"]],
+#         [row["P2-Lat"], row["P2-Long"]],
+#         [row["P3-Lat"], row["P3-Long"]],
+#         [row["P4-Lat"], row["P4-Long"]],
+#         [row["P1-Lat"], row["P1-Long"]],
+#     ]
+#     folium.PolyLine(quad, color="blue", weight=2.5, opacity=0.8).add_to(m)
+
+lod6_min_latitude = 34.60242062470433
+lod6_max_latitude = 34.60262661836688
+lod6_min_longitude = 135.46143321240777
+lod6_max_longitude = 135.46173838818902
+
+lod6 = [
+    [lod6_min_latitude, lod6_min_longitude],  # Top-left
+    [lod6_min_latitude, lod6_max_longitude],  # Top-right
+    [lod6_max_latitude, lod6_max_longitude],  # Bottom-right
+    [lod6_max_latitude, lod6_min_longitude],  # Bottom-left
+    [lod6_min_latitude, lod6_min_longitude],  # Closing the quad
+]
+
+lod5_min_latitude = 34.60235839570932
+lod5_max_latitude = 34.60256438935141
+lod5_min_longitude = 135.4614335973873
+lod5_max_longitude = 135.4617387731777
+
+lod5 = [
+    [lod5_min_latitude, lod5_min_longitude],  # Top-left
+    [lod5_min_latitude, lod5_max_longitude],  # Top-right
+    [lod5_max_latitude, lod5_max_longitude],  # Bottom-right
+    [lod5_max_latitude, lod5_min_longitude],  # Bottom-left
+    [lod5_min_latitude, lod5_min_longitude],  # Closing the quad
+]
+
+lod4_min_latitude = 34.60232698019934
+lod4_max_latitude = 34.6025329738568
+lod4_min_longitude = 135.46149547051553
+lod4_max_longitude = 135.4618006462789
+
+lod4 = [
+    [lod4_min_latitude, lod4_min_longitude],  # Top-left
+    [lod4_min_latitude, lod4_max_longitude],  # Top-right
+    [lod4_max_latitude, lod4_max_longitude],  # Bottom-right
+    [lod4_max_latitude, lod4_min_longitude],  # Bottom-left
+    [lod4_min_latitude, lod4_min_longitude],  # Closing the quad
+]
+
+folium.PolyLine(lod6, color="blue", weight=2.5, opacity=0.8).add_to(m)
+folium.PolyLine(lod5, color="green", weight=2.5, opacity=0.8).add_to(m)
+folium.PolyLine(lod4, color="red", weight=2.5, opacity=0.8).add_to(m)
 
 # Save the map to an HTML file for visualization
 m.save("bounding_box_map.html")
