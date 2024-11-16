@@ -49,10 +49,10 @@ folium.PolyLine(bounds, color="red", weight=2.5, opacity=0.8).add_to(m)
 #     ]
 #     folium.PolyLine(quad, color="blue", weight=2.5, opacity=0.8).add_to(m)
 
-lod6_min_latitude = 34.60242062470433
-lod6_max_latitude = 34.60262661836688
-lod6_min_longitude = 135.46143321240777
-lod6_max_longitude = 135.46173838818902
+lod6_min_latitude = 34.602469074733456
+lod6_max_latitude = 34.60281501212898
+lod6_min_longitude = 135.46141994778742
+lod6_max_longitude = 135.4621147708877
 
 lod6 = [
     [lod6_min_latitude, lod6_min_longitude],  # Top-left
@@ -62,10 +62,10 @@ lod6 = [
     [lod6_min_latitude, lod6_min_longitude],  # Closing the quad
 ]
 
-lod5_min_latitude = 34.60235839570932
-lod5_max_latitude = 34.60256438935141
-lod5_min_longitude = 135.4614335973873
-lod5_max_longitude = 135.4617387731777
+lod5_min_latitude = 34.6021274073895
+lod5_max_latitude = 34.602816131799294
+lod5_min_longitude = 135.46142088657962
+lod5_max_longitude = 135.46211556461543
 
 lod5 = [
     [lod5_min_latitude, lod5_min_longitude],  # Top-left
@@ -75,10 +75,10 @@ lod5 = [
     [lod5_min_latitude, lod5_min_longitude],  # Closing the quad
 ]
 
-lod4_min_latitude = 34.60232698019934
-lod4_max_latitude = 34.6025329738568
-lod4_min_longitude = 135.46149547051553
-lod4_max_longitude = 135.4618006462789
+lod4_min_latitude = 34.601439961205905
+lod4_max_latitude = 34.602818437197506
+lod4_min_longitude = 135.4614008693341
+lod4_max_longitude = 135.46282132507878
 
 lod4 = [
     [lod4_min_latitude, lod4_min_longitude],  # Top-left
@@ -90,7 +90,7 @@ lod4 = [
 
 folium.PolyLine(lod6, color="blue", weight=2.5, opacity=0.8).add_to(m)
 folium.PolyLine(lod5, color="green", weight=2.5, opacity=0.8).add_to(m)
-folium.PolyLine(lod4, color="red", weight=2.5, opacity=0.8).add_to(m)
+folium.PolyLine(lod4, color="yellow", weight=2.5, opacity=0.8).add_to(m)
 
 # Save the map to an HTML file for visualization
 m.save("bounding_box_map.html")
